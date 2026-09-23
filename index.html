@@ -2,454 +2,623 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="theme-color" content="#0757d5">
-<title>وصلة | خدماتك في مكان واحد</title>
+<title>وصلة | كل خدماتك في مكان واحد</title>
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,Tahoma,sans-serif;
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Tahoma,Arial,sans-serif;
+-webkit-tap-highlight-color:transparent;
 }
 
 body{
-  background:#f4f7fb;
-  color:#172033;
-  min-height:100vh;
+background:#f3f6fb;
+color:#182238;
+min-height:100vh;
 }
 
-button,input,select{font:inherit}
-button{border:0;cursor:pointer}
+button,input,select{
+font-family:inherit;
+}
+
+button{
+cursor:pointer;
+border:0;
+}
 
 .app{
-  max-width:520px;
-  margin:auto;
-  min-height:100vh;
-  background:#f4f7fb;
-  padding-bottom:90px;
+width:100%;
+max-width:520px;
+margin:auto;
+min-height:100vh;
+padding-bottom:92px;
 }
 
-/* الهيدر */
+/* HEADER */
+
 .header{
-  background:linear-gradient(135deg,#0866e8,#063c9f);
-  color:white;
-  padding:22px 18px 28px;
-  border-radius:0 0 28px 28px;
+background:linear-gradient(145deg,#0871f9,#06358e);
+color:white;
+padding:18px 16px 27px;
+border-radius:0 0 32px 32px;
+box-shadow:0 8px 30px rgba(4,70,170,.25);
 }
 
 .topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:22px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:20px;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:24px;
-  font-weight:800;
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-.logo-icon{
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  background:rgba(255,255,255,.18);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
+.brand-icon{
+width:45px;
+height:45px;
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,255,255,.18);
+font-size:25px;
+box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);
 }
 
-.profile-btn{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:rgba(255,255,255,.18);
-  color:white;
-  font-size:20px;
+.brand-name{
+font-size:26px;
+font-weight:900;
 }
 
-.welcome{
-  font-size:14px;
-  opacity:.85;
-  margin-bottom:6px;
+.profile-button{
+width:45px;
+height:45px;
+border-radius:50%;
+background:rgba(255,255,255,.16);
+color:white;
+font-size:22px;
 }
 
-.header h1{
-  font-size:25px;
-  margin-bottom:18px;
+.greeting{
+font-size:13px;
+opacity:.88;
+margin-bottom:6px;
+}
+
+.header-title{
+font-size:25px;
+font-weight:900;
+line-height:1.4;
+margin-bottom:18px;
 }
 
 .balance-card{
-  background:rgba(255,255,255,.14);
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:20px;
-  padding:18px;
-  backdrop-filter:blur(10px);
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.18),
+rgba(255,255,255,.08)
+);
+border:1px solid rgba(255,255,255,.22);
+border-radius:23px;
+padding:18px;
+box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
 }
 
-.balance-title{
-  font-size:13px;
-  opacity:.85;
+.balance-label{
+font-size:13px;
+opacity:.82;
 }
 
-.balance{
-  font-size:32px;
-  font-weight:800;
-  margin:7px 0 15px;
+.balance-value{
+font-size:34px;
+font-weight:900;
+margin:6px 0 17px;
 }
 
 .balance-actions{
-  display:flex;
-  gap:10px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
 
 .balance-actions button{
-  flex:1;
-  padding:11px;
-  border-radius:12px;
-  font-weight:bold;
+padding:12px 8px;
+border-radius:14px;
+font-weight:bold;
+font-size:13px;
 }
 
-.add-money{
-  background:white;
-  color:#0757d5;
+.recharge-btn{
+background:white;
+color:#0757d5;
 }
 
-.transactions-btn{
-  background:rgba(255,255,255,.14);
-  color:white;
-  border:1px solid rgba(255,255,255,.25);
+.history-btn{
+background:rgba(255,255,255,.13);
+border:1px solid rgba(255,255,255,.25);
+color:white;
 }
 
-/* المحتوى */
+/* MAIN */
+
 .main{
-  padding:20px 15px;
+padding:20px 14px;
 }
 
-.section-title{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:14px;
+.section-head{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:13px;
 }
 
-.section-title h2{font-size:19px}
-
-.section-title span{
-  color:#0757d5;
-  font-size:13px;
-  cursor:pointer;
+.section-head h2{
+font-size:19px;
 }
+
+.section-head button{
+background:none;
+color:#0757d5;
+font-size:12px;
+}
+
+/* SERVICES */
 
 .services{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:11px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
 }
 
 .service{
-  background:white;
-  border-radius:17px;
-  padding:14px 5px;
-  text-align:center;
-  box-shadow:0 4px 18px rgba(30,60,100,.06);
-  transition:.2s;
+background:white;
+border-radius:19px;
+padding:13px 4px;
+text-align:center;
+box-shadow:0 5px 20px rgba(30,60,100,.07);
+transition:.15s;
 }
 
-.service:active{transform:scale(.95)}
+.service:active{
+transform:scale(.94);
+}
 
 .service-icon{
-  width:48px;
-  height:48px;
-  margin:auto auto 8px;
-  border-radius:15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:23px;
-  background:#edf4ff;
+width:49px;
+height:49px;
+margin:auto auto 8px;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#edf4ff;
+font-size:23px;
 }
 
 .service-name{
-  font-size:12px;
-  font-weight:bold;
-  line-height:1.4;
+font-size:11px;
+font-weight:bold;
+line-height:1.4;
 }
 
-.quick{margin-top:25px}
+/* QUICK */
+
+.quick{
+margin-top:25px;
+}
 
 .quick-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:11px;
 }
 
 .quick-card{
-  background:white;
-  padding:17px;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  box-shadow:0 4px 18px rgba(30,60,100,.06);
-  cursor:pointer;
+background:white;
+border-radius:19px;
+padding:15px;
+display:flex;
+align-items:center;
+gap:11px;
+box-shadow:0 5px 20px rgba(30,60,100,.07);
 }
 
-.quick-card-icon{
-  width:46px;
-  height:46px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#eef5ff;
-  font-size:22px;
+.quick-icon{
+width:46px;
+height:46px;
+flex:none;
+border-radius:14px;
+background:#edf4ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:21px;
 }
 
 .quick-card strong{
-  display:block;
-  font-size:14px;
-  margin-bottom:4px;
+display:block;
+font-size:13px;
+margin-bottom:4px;
 }
 
 .quick-card small{
-  color:#7a8495;
-  font-size:11px;
+font-size:10px;
+color:#8a94a5;
 }
 
+/* OFFER */
+
 .offer{
-  margin-top:25px;
-  background:linear-gradient(135deg,#0a65e8,#1746a4);
-  color:white;
-  border-radius:21px;
-  padding:20px;
-  position:relative;
-  overflow:hidden;
+margin-top:24px;
+padding:20px;
+border-radius:22px;
+color:white;
+background:linear-gradient(135deg,#0b68ed,#123e9c);
+position:relative;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(4,70,170,.18);
+}
+
+.offer:after{
+content:"";
+position:absolute;
+width:150px;
+height:150px;
+border-radius:50%;
+left:-50px;
+top:-60px;
+background:rgba(255,255,255,.08);
 }
 
 .offer h3{
-  font-size:19px;
-  margin-bottom:7px;
+font-size:19px;
+margin-bottom:7px;
 }
 
 .offer p{
-  font-size:12px;
-  opacity:.9;
-  margin-bottom:14px;
+font-size:11px;
+opacity:.88;
+margin-bottom:13px;
 }
 
 .offer button{
-  background:white;
-  color:#0757d5;
-  padding:10px 17px;
-  border-radius:11px;
-  font-weight:bold;
+background:white;
+color:#0757d5;
+padding:10px 16px;
+border-radius:12px;
+font-weight:bold;
+font-size:12px;
 }
 
-.transactions{margin-top:25px}
+/* TRANSACTIONS */
+
+.transactions{
+margin-top:25px;
+}
 
 .transaction{
-  background:white;
-  padding:14px;
-  border-radius:17px;
-  margin-bottom:10px;
-  display:flex;
-  align-items:center;
-  gap:12px;
+background:white;
+border-radius:17px;
+padding:13px;
+margin-bottom:9px;
+display:flex;
+align-items:center;
+gap:11px;
+box-shadow:0 4px 15px rgba(30,60,100,.05);
 }
 
 .transaction-icon{
-  width:44px;
-  height:44px;
-  background:#eef5ff;
-  border-radius:13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
+width:44px;
+height:44px;
+border-radius:13px;
+background:#edf4ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
 }
 
-.transaction-info{flex:1}
-
-.transaction-info strong{
-  display:block;
-  font-size:14px;
-  margin-bottom:4px;
+.transaction-info{
+flex:1;
+min-width:0;
 }
 
-.transaction-info small{
-  color:#8a93a2;
-  font-size:11px;
+.transaction-title{
+font-size:13px;
+font-weight:bold;
+margin-bottom:4px;
 }
 
-.amount{
-  font-weight:bold;
-  color:#e23b3b;
-  font-size:13px;
+.transaction-date{
+font-size:9px;
+color:#8a94a5;
+}
+
+.transaction-amount{
+font-size:12px;
+font-weight:bold;
+}
+
+.positive{
+color:#0a9a58;
+}
+
+.negative{
+color:#df3c3c;
 }
 
 .empty{
-  background:white;
-  border-radius:17px;
-  padding:25px;
-  text-align:center;
-  color:#8b94a4;
-  font-size:13px;
+background:white;
+padding:25px 15px;
+border-radius:18px;
+text-align:center;
+color:#8a94a5;
+font-size:12px;
 }
 
-/* القائمة السفلية */
+/* BOTTOM NAV */
+
 .bottom-nav{
-  position:fixed;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:100%;
-  max-width:520px;
-  background:rgba(255,255,255,.96);
-  border-top:1px solid #e6eaf0;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  padding:9px 5px;
-  z-index:20;
-  backdrop-filter:blur(12px);
+position:fixed;
+z-index:100;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:100%;
+max-width:520px;
+background:rgba(255,255,255,.97);
+border-top:1px solid #e5e9ef;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+padding:8px 4px calc(8px + env(safe-area-inset-bottom));
+backdrop-filter:blur(15px);
 }
 
 .nav-item{
-  background:none;
-  color:#8a93a2;
-  font-size:10px;
-  text-align:center;
+background:none;
+color:#8a94a5;
+font-size:9px;
+font-weight:bold;
 }
 
 .nav-icon{
-  display:block;
-  font-size:20px;
-  margin-bottom:3px;
+display:block;
+font-size:20px;
+margin-bottom:3px;
 }
 
 .nav-item.active{
-  color:#0757d5;
-  font-weight:bold;
+color:#0757d5;
 }
 
-/* النافذة */
+/* MODAL */
+
 .modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(8,20,40,.55);
-  z-index:50;
-  align-items:flex-end;
-  justify-content:center;
+position:fixed;
+z-index:200;
+inset:0;
+background:rgba(8,20,40,.57);
+display:none;
+align-items:flex-end;
+justify-content:center;
 }
 
-.modal.show{display:flex}
+.modal.show{
+display:flex;
+}
 
 .modal-box{
-  width:100%;
-  max-width:520px;
-  background:white;
-  border-radius:27px 27px 0 0;
-  padding:22px 18px 30px;
-  animation:slideUp .25s ease;
-  max-height:90vh;
-  overflow:auto;
+width:100%;
+max-width:520px;
+max-height:91vh;
+overflow:auto;
+background:#fff;
+border-radius:28px 28px 0 0;
+padding:20px 17px 30px;
+animation:up .22s ease;
 }
 
-@keyframes slideUp{
-  from{transform:translateY(100%)}
-  to{transform:translateY(0)}
+@keyframes up{
+from{transform:translateY(100%)}
+to{transform:translateY(0)}
 }
 
 .modal-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:18px;
 }
 
-.modal-head h3{font-size:20px}
+.modal-title{
+font-size:19px;
+font-weight:900;
+}
 
 .close{
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  background:#f0f3f7;
-  color:#555;
+width:36px;
+height:36px;
+border-radius:50%;
+background:#f0f3f7;
+color:#555;
+font-size:16px;
 }
 
-.form-group{margin-bottom:14px}
+/* FORMS */
+
+.form-group{
+margin-bottom:13px;
+}
 
 .form-group label{
-  display:block;
-  font-size:12px;
-  font-weight:bold;
-  margin-bottom:7px;
+display:block;
+font-size:11px;
+font-weight:bold;
+margin-bottom:7px;
 }
 
 .form-group input,
 .form-group select{
-  width:100%;
-  padding:14px;
-  border:1px solid #dfe4eb;
-  border-radius:13px;
-  outline:none;
-  background:#fafbfd;
+width:100%;
+padding:13px;
+border-radius:13px;
+border:1px solid #dfe4eb;
+background:#fafbfd;
+outline:none;
+font-size:13px;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+border-color:#0757d5;
 }
 
 .primary{
-  width:100%;
-  padding:14px;
-  border-radius:13px;
-  background:#0757d5;
-  color:white;
-  font-weight:bold;
-  margin-top:5px;
+width:100%;
+padding:14px;
+border-radius:13px;
+background:#0757d5;
+color:white;
+font-weight:bold;
+font-size:13px;
 }
 
 .secondary{
-  width:100%;
-  padding:13px;
-  border-radius:13px;
-  background:#eef2f7;
-  color:#263449;
-  font-weight:bold;
-  margin-top:9px;
+width:100%;
+padding:13px;
+border-radius:13px;
+background:#eef2f7;
+color:#263449;
+font-weight:bold;
+margin-top:9px;
+font-size:13px;
 }
 
+/* PROFILE */
+
+.profile-top{
+text-align:center;
+padding:8px 0 18px;
+}
+
+.avatar{
+width:76px;
+height:76px;
+margin:auto auto 10px;
+border-radius:50%;
+background:#eaf2ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:35px;
+}
+
+.profile-name{
+font-size:18px;
+font-weight:bold;
+}
+
+.profile-email{
+font-size:11px;
+color:#8a94a5;
+margin-top:4px;
+}
+
+/* NOTIFICATION */
+
 .toast{
-  position:fixed;
-  left:50%;
-  bottom:92px;
-  transform:translateX(-50%) translateY(20px);
-  background:#172033;
-  color:white;
-  padding:12px 18px;
-  border-radius:13px;
-  font-size:13px;
-  opacity:0;
-  pointer-events:none;
-  transition:.3s;
-  z-index:100;
-  width:max-content;
-  max-width:90%;
-  text-align:center;
+position:fixed;
+z-index:500;
+bottom:100px;
+left:50%;
+transform:translate(-50%,20px);
+background:#172033;
+color:white;
+padding:12px 17px;
+border-radius:13px;
+font-size:12px;
+opacity:0;
+pointer-events:none;
+transition:.25s;
+max-width:90%;
+text-align:center;
 }
 
 .toast.show{
-  opacity:1;
-  transform:translateX(-50%) translateY(0);
+opacity:1;
+transform:translate(-50%,0);
+}
+
+/* LOGIN */
+
+.login-box{
+text-align:center;
+padding:5px 0;
+}
+
+.login-logo{
+width:70px;
+height:70px;
+border-radius:22px;
+background:linear-gradient(135deg,#0871f9,#06358e);
+color:white;
+font-size:35px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 13px;
+}
+
+.login-box p{
+font-size:11px;
+color:#8993a3;
+margin-bottom:18px;
+}
+
+/* CONFIRM */
+
+.confirm-icon{
+width:65px;
+height:65px;
+margin:5px auto 12px;
+border-radius:20px;
+background:#edf4ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-align:center;
+}
+
+.confirm-text{
+text-align:center;
+font-size:13px;
+line-height:1.8;
+margin-bottom:16px;
+}
+
+.confirm-amount{
+font-size:24px;
+font-weight:900;
+color:#0757d5;
+margin:8px 0;
 }
 
 @media(max-width:370px){
-  .services{grid-template-columns:repeat(3,1fr)}
-  .balance{font-size:28px}
+.services{
+grid-template-columns:repeat(3,1fr);
+}
+.balance-value{
+font-size:29px;
+}
 }
 </style>
 </head>
@@ -460,205 +629,248 @@ button{border:0;cursor:pointer}
 
 <header class="header">
 
-  <div class="topbar">
-    <div class="logo">
-      <div class="logo-icon">🔗</div>
-      <span>وصلة</span>
-    </div>
+<div class="topbar">
 
-    <button class="profile-btn" onclick="openProfile()">👤</button>
-  </div>
+<div class="brand">
+<div class="brand-icon">🔗</div>
+<div class="brand-name">وصلة</div>
+</div>
 
-  <div class="welcome">أهلاً بك 👋</div>
-  <h1>كل خدماتك في مكان واحد</h1>
+<button class="profile-button" onclick="openProfile()">👤</button>
 
-  <div class="balance-card">
-    <div class="balance-title">الرصيد المتاح</div>
+</div>
 
-    <div class="balance" id="balance">0.00 ج.م</div>
+<div class="greeting" id="greeting">
+أهلاً بك 👋
+</div>
 
-    <div class="balance-actions">
-      <button class="add-money" onclick="openTopup()">
-        ＋ شحن الرصيد
-      </button>
+<div class="header-title">
+كل خدماتك في مكان واحد
+</div>
 
-      <button class="transactions-btn" onclick="showTransactions()">
-        📋 العمليات
-      </button>
-    </div>
-  </div>
+<div class="balance-card">
+
+<div class="balance-label">
+الرصيد المتاح
+</div>
+
+<div class="balance-value" id="balance">
+0.00 ج.م
+</div>
+
+<div class="balance-actions">
+
+<button class="recharge-btn" onclick="openTopup()">
+＋ شحن الرصيد
+</button>
+
+<button class="history-btn" onclick="showTransactions()">
+📋 العمليات
+</button>
+
+</div>
+
+</div>
 
 </header>
 
 <main class="main">
 
-  <div class="section-title">
-    <h2>الخدمات</h2>
-    <span onclick="showAllServices()">عرض الكل</span>
-  </div>
+<div class="section-head">
+<h2>الخدمات</h2>
+<button onclick="showAllServices()">عرض الكل</button>
+</div>
 
-  <div class="services">
+<div class="services">
 
-    <div class="service" onclick="openService('mobile')">
-      <div class="service-icon">📱</div>
-      <div class="service-name">شحن رصيد</div>
-    </div>
+<div class="service" onclick="openService('mobile')">
+<div class="service-icon">📱</div>
+<div class="service-name">شحن رصيد</div>
+</div>
 
-    <div class="service" onclick="openService('internet')">
-      <div class="service-icon">🌐</div>
-      <div class="service-name">باقات إنترنت</div>
-    </div>
+<div class="service" onclick="openService('internet')">
+<div class="service-icon">🌐</div>
+<div class="service-name">باقات إنترنت</div>
+</div>
 
-    <div class="service" onclick="openService('electricity')">
-      <div class="service-icon">⚡</div>
-      <div class="service-name">كهرباء</div>
-    </div>
+<div class="service" onclick="openService('electricity')">
+<div class="service-icon">⚡</div>
+<div class="service-name">كهرباء</div>
+</div>
 
-    <div class="service" onclick="openService('water')">
-      <div class="service-icon">💧</div>
-      <div class="service-name">مياه</div>
-    </div>
+<div class="service" onclick="openService('water')">
+<div class="service-icon">💧</div>
+<div class="service-name">مياه</div>
+</div>
 
-    <div class="service" onclick="openService('gas')">
-      <div class="service-icon">🔥</div>
-      <div class="service-name">غاز</div>
-    </div>
+<div class="service" onclick="openService('gas')">
+<div class="service-icon">🔥</div>
+<div class="service-name">غاز</div>
+</div>
 
-    <div class="service" onclick="openService('transport')">
-      <div class="service-icon">🚌</div>
-      <div class="service-name">مواصلات</div>
-    </div>
+<div class="service" onclick="openService('transport')">
+<div class="service-icon">🚌</div>
+<div class="service-name">مواصلات</div>
+</div>
 
-    <div class="service" onclick="openService('entertainment')">
-      <div class="service-icon">🎬</div>
-      <div class="service-name">ترفيه</div>
-    </div>
+<div class="service" onclick="openService('entertainment')">
+<div class="service-icon">🎬</div>
+<div class="service-name">ترفيه</div>
+</div>
 
-    <div class="service" onclick="openService('phone')">
-      <div class="service-icon">☎️</div>
-      <div class="service-name">تليفون</div>
-    </div>
+<div class="service" onclick="openService('phone')">
+<div class="service-icon">☎️</div>
+<div class="service-name">تليفون</div>
+</div>
 
-  </div>
+</div>
 
-  <section class="quick">
+<section class="quick">
 
-    <div class="section-title">
-      <h2>وصول سريع</h2>
-    </div>
+<div class="section-head">
+<h2>وصول سريع</h2>
+</div>
 
-    <div class="quick-grid">
+<div class="quick-grid">
 
-      <div class="quick-card" onclick="openTopup()">
-        <div class="quick-card-icon">💳</div>
-        <div>
-          <strong>شحن المحفظة</strong>
-          <small>أضف رصيدك بسهولة</small>
-        </div>
-      </div>
+<div class="quick-card" onclick="openTopup()">
+<div class="quick-icon">💳</div>
+<div>
+<strong>شحن المحفظة</strong>
+<small>إضافة رصيد تجريبي</small>
+</div>
+</div>
 
-      <div class="quick-card" onclick="showTransactions()">
-        <div class="quick-card-icon">🧾</div>
-        <div>
-          <strong>الفواتير</strong>
-          <small>تابع عملياتك</small>
-        </div>
-      </div>
+<div class="quick-card" onclick="showTransactions()">
+<div class="quick-icon">🧾</div>
+<div>
+<strong>الفواتير</strong>
+<small>سجل عملياتك</small>
+</div>
+</div>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
-  <section class="offer">
-    <h3>🎁 عروض وصلة</h3>
-    <p>العروض والمكافآت ستظهر هنا عند تفعيلها.</p>
-    <button onclick="showToast('سيتم إضافة العروض قريبًا')">
-      اكتشف العروض
-    </button>
-  </section>
+<section class="offer">
 
-  <section class="transactions">
+<h3>🎁 عروض وصلة</h3>
 
-    <div class="section-title">
-      <h2>آخر العمليات</h2>
-      <span onclick="showTransactions()">عرض الكل</span>
-    </div>
+<p>
+العروض والمكافآت ستظهر هنا عند تفعيلها.
+</p>
 
-    <div id="transactionsList">
-      <div class="empty">
-        لا توجد عمليات حتى الآن
-      </div>
-    </div>
+<button onclick="showToast('العروض ستتوفر قريبًا 🎁')">
+اكتشف العروض
+</button>
 
-  </section>
+</section>
+
+<section class="transactions">
+
+<div class="section-head">
+<h2>آخر العمليات</h2>
+<button onclick="showTransactions()">عرض الكل</button>
+</div>
+
+<div id="transactionsList"></div>
+
+</section>
 
 </main>
+
 </div>
+
 
 <nav class="bottom-nav">
 
-  <button class="nav-item active" onclick="goHome(this)">
-    <span class="nav-icon">🏠</span>
-    الرئيسية
-  </button>
+<button class="nav-item active" onclick="homeNav(this)">
+<span class="nav-icon">🏠</span>
+الرئيسية
+</button>
 
-  <button class="nav-item" onclick="openPayments(this)">
-    <span class="nav-icon">💳</span>
-    الدفع
-  </button>
+<button class="nav-item" onclick="paymentsNav(this)">
+<span class="nav-icon">💳</span>
+الدفع
+</button>
 
-  <button class="nav-item" onclick="showTransactions(this)">
-    <span class="nav-icon">📋</span>
-    العمليات
-  </button>
+<button class="nav-item" onclick="transactionsNav(this)">
+<span class="nav-icon">📋</span>
+العمليات
+</button>
 
-  <button class="nav-item" onclick="openWallet(this)">
-    <span class="nav-icon">💰</span>
-    المحفظة
-  </button>
+<button class="nav-item" onclick="walletNav(this)">
+<span class="nav-icon">💰</span>
+المحفظة
+</button>
 
-  <button class="nav-item" onclick="openProfile(this)">
-    <span class="nav-icon">👤</span>
-    حسابي
-  </button>
+<button class="nav-item" onclick="profileNav(this)">
+<span class="nav-icon">👤</span>
+حسابي
+</button>
 
 </nav>
 
+
 <div class="modal" id="modal">
 
-  <div class="modal-box">
+<div class="modal-box">
 
-    <div class="modal-head">
-      <h3 id="modalTitle">الخدمة</h3>
-      <button class="close" onclick="closeModal()">✕</button>
-    </div>
+<div class="modal-head">
 
-    <div id="modalContent"></div>
+<div class="modal-title" id="modalTitle">
+وصلة
+</div>
 
-  </div>
+<button class="close" onclick="closeModal()">✕</button>
 
 </div>
+
+<div id="modalContent"></div>
+
+</div>
+
+</div>
+
 
 <div class="toast" id="toast"></div>
 
+
 <script>
 
-let balance = 0;
-let transactions = [];
+/* =========================
+   DATA
+========================= */
 
-const serviceData = {
+let balance = Number(localStorage.getItem("wasla_balance") || 0);
+
+let transactions =
+JSON.parse(localStorage.getItem("wasla_transactions") || "[]");
+
+let user =
+JSON.parse(localStorage.getItem("wasla_user") || "null");
+
+
+/* =========================
+   SERVICES
+========================= */
+
+const services = {
 
 mobile:{
 title:"📱 شحن رصيد",
+icon:"📱",
 fields:`
+
 <div class="form-group">
 <label>رقم الهاتف</label>
-<input id="phoneNumber" type="tel" placeholder="01xxxxxxxxx">
+<input id="phone" type="tel" placeholder="01xxxxxxxxx">
 </div>
 
 <div class="form-group">
-<label>شركة المحمول</label>
-<select id="network">
+<label>الشبكة</label>
+<select>
 <option>فودافون</option>
 <option>أورنج</option>
 <option>اتصالات</option>
@@ -671,22 +883,25 @@ fields:`
 <input id="amount" type="number" placeholder="مثال: 50">
 </div>
 
-<button class="primary" onclick="processPayment('شحن رصيد')">
-متابعة
+<button class="primary"
+onclick="preparePayment('شحن رصيد','📱')">
+متابعة الدفع
 </button>
 `
 },
 
 internet:{
 title:"🌐 باقات الإنترنت",
+icon:"🌐",
 fields:`
+
 <div class="form-group">
 <label>رقم الهاتف</label>
-<input id="phoneNumber" type="tel" placeholder="01xxxxxxxxx">
+<input id="phone" type="tel" placeholder="01xxxxxxxxx">
 </div>
 
 <div class="form-group">
-<label>شركة المحمول</label>
+<label>الشبكة</label>
 <select>
 <option>فودافون</option>
 <option>أورنج</option>
@@ -705,18 +920,21 @@ fields:`
 </select>
 </div>
 
-<button class="primary" onclick="processPayment('باقة إنترنت')">
-متابعة
+<button class="primary"
+onclick="preparePayment('باقة إنترنت','🌐')">
+متابعة الدفع
 </button>
 `
 },
 
 electricity:{
-title:"⚡ دفع الكهرباء",
+title:"⚡ الكهرباء",
+icon:"⚡",
 fields:`
+
 <div class="form-group">
-<label>رقم العداد / كود الدفع</label>
-<input id="customerCode" type="number" placeholder="أدخل الكود">
+<label>رقم العداد أو كود الدفع</label>
+<input id="customer" type="text" placeholder="أدخل الرقم">
 </div>
 
 <div class="form-group">
@@ -724,18 +942,21 @@ fields:`
 <input id="amount" type="number" placeholder="المبلغ">
 </div>
 
-<button class="primary" onclick="processPayment('كهرباء')">
-متابعة
+<button class="primary"
+onclick="preparePayment('فاتورة كهرباء','⚡')">
+متابعة الدفع
 </button>
 `
 },
 
 water:{
-title:"💧 دفع المياه",
+title:"💧 المياه",
+icon:"💧",
 fields:`
+
 <div class="form-group">
 <label>رقم المشترك</label>
-<input id="customerCode" type="number" placeholder="رقم المشترك">
+<input id="customer" type="text" placeholder="رقم المشترك">
 </div>
 
 <div class="form-group">
@@ -743,18 +964,21 @@ fields:`
 <input id="amount" type="number" placeholder="المبلغ">
 </div>
 
-<button class="primary" onclick="processPayment('مياه')">
-متابعة
+<button class="primary"
+onclick="preparePayment('فاتورة مياه','💧')">
+متابعة الدفع
 </button>
 `
 },
 
 gas:{
-title:"🔥 دفع الغاز",
+title:"🔥 الغاز",
+icon:"🔥",
 fields:`
+
 <div class="form-group">
 <label>رقم المشترك</label>
-<input id="customerCode" type="text" placeholder="رقم المشترك">
+<input id="customer" type="text" placeholder="رقم المشترك">
 </div>
 
 <div class="form-group">
@@ -762,21 +986,24 @@ fields:`
 <input id="amount" type="number" placeholder="المبلغ">
 </div>
 
-<button class="primary" onclick="processPayment('غاز')">
-متابعة
+<button class="primary"
+onclick="preparePayment('فاتورة غاز','🔥')">
+متابعة الدفع
 </button>
 `
 },
 
 transport:{
 title:"🚌 المواصلات",
+icon:"🚌",
 fields:`
+
 <div class="form-group">
-<label>اختر الخدمة</label>
+<label>الخدمة</label>
 <select>
-<option>تذاكر مواصلات</option>
+<option>تذكرة مواصلات</option>
 <option>شحن كارت مواصلات</option>
-<option>خدمات النقل</option>
+<option>خدمة نقل</option>
 </select>
 </div>
 
@@ -785,22 +1012,24 @@ fields:`
 <input id="amount" type="number" placeholder="المبلغ">
 </div>
 
-<button class="primary" onclick="processPayment('مواصلات')">
-متابعة
+<button class="primary"
+onclick="preparePayment('مواصلات','🚌')">
+متابعة الدفع
 </button>
 `
 },
 
 entertainment:{
-title:"🎬 المحتوى الترفيهي",
+title:"🎬 الترفيه",
+icon:"🎬",
 fields:`
+
 <div class="form-group">
-<label>اختر الخدمة</label>
+<label>الخدمة</label>
 <select>
 <option>اشتراك ترفيهي</option>
 <option>محتوى رقمي</option>
 <option>ألعاب</option>
-<option>خدمات أخرى</option>
 </select>
 </div>
 
@@ -809,18 +1038,21 @@ fields:`
 <input id="amount" type="number" placeholder="المبلغ">
 </div>
 
-<button class="primary" onclick="processPayment('ترفيه')">
-متابعة
+<button class="primary"
+onclick="preparePayment('محتوى ترفيهي','🎬')">
+متابعة الدفع
 </button>
 `
 },
 
 phone:{
 title:"☎️ التليفون والإنترنت",
+icon:"☎️",
 fields:`
+
 <div class="form-group">
 <label>رقم الخدمة</label>
-<input id="customerCode" type="text" placeholder="رقم الخدمة">
+<input id="customer" type="text" placeholder="رقم الخدمة">
 </div>
 
 <div class="form-group">
@@ -828,119 +1060,340 @@ fields:`
 <input id="amount" type="number" placeholder="المبلغ">
 </div>
 
-<button class="primary" onclick="processPayment('تليفون وإنترنت')">
-متابعة
+<button class="primary"
+onclick="preparePayment('فاتورة تليفون وإنترنت','☎️')">
+متابعة الدفع
 </button>
 `
 }
 
 };
 
-function openService(type){
 
-const data=serviceData[type];
+/* =========================
+   STORAGE
+========================= */
 
-if(!data)return;
+function saveData(){
 
-document.getElementById("modalTitle").textContent=data.title;
-document.getElementById("modalContent").innerHTML=data.fields;
+localStorage.setItem(
+"wasla_balance",
+balance
+);
+
+localStorage.setItem(
+"wasla_transactions",
+JSON.stringify(transactions)
+);
+
+localStorage.setItem(
+"wasla_user",
+JSON.stringify(user)
+);
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal(title,content){
+
+document.getElementById("modalTitle").textContent=title;
+
+document.getElementById("modalContent").innerHTML=content;
+
 document.getElementById("modal").classList.add("show");
 
 }
 
+function closeModal(){
+
+document.getElementById("modal").classList.remove("show");
+
+}
+
+document.getElementById("modal").addEventListener(
+"click",
+function(e){
+
+if(e.target===this){
+closeModal();
+}
+
+}
+);
+
+
+/* =========================
+   SERVICE
+========================= */
+
+function openService(type){
+
+if(!services[type]) return;
+
+openModal(
+services[type].title,
+services[type].fields
+);
+
+}
+
+
+/* =========================
+   TOP UP
+========================= */
+
 function openTopup(){
 
-document.getElementById("modalTitle").textContent="💳 شحن الرصيد";
+openModal(
+"💳 شحن الرصيد",
+`
 
-document.getElementById("modalContent").innerHTML=`
+<div style="
+background:#edf4ff;
+border-radius:16px;
+padding:15px;
+margin-bottom:15px;
+text-align:center;
+">
+
+<div style="font-size:11px;color:#778399">
+الرصيد الحالي
+</div>
+
+<div style="
+font-size:25px;
+font-weight:900;
+color:#0757d5;
+margin-top:5px;
+">
+${money(balance)}
+</div>
+
+</div>
 
 <div class="form-group">
 <label>مبلغ الشحن</label>
-<input id="topupAmount" type="number" placeholder="مثال: 100">
+<input id="topupAmount"
+type="number"
+placeholder="مثال: 100">
 </div>
 
 <div class="form-group">
 <label>طريقة الشحن</label>
 <select>
-<option>بطاقة بنكية</option>
-<option>محفظة إلكترونية</option>
-<option>بطاقة دفع</option>
+<option>بطاقة بنكية - تجريبي</option>
+<option>محفظة إلكترونية - تجريبي</option>
+<option>بطاقة دفع - تجريبي</option>
 </select>
 </div>
 
-<button class="primary" onclick="topupBalance()">
+<button class="primary"
+onclick="confirmTopup()">
 شحن الرصيد
 </button>
 
-<button class="secondary" onclick="closeModal()">
-إلغاء
-</button>
-`;
-
-document.getElementById("modal").classList.add("show");
+<div style="
+font-size:10px;
+color:#8993a3;
+text-align:center;
+margin-top:10px;
+">
+هذه عملية تجريبية وليست عملية مالية حقيقية.
+</div>
+`
+);
 
 }
 
-function topupBalance(){
+function confirmTopup(){
 
-const amount=Number(document.getElementById("topupAmount").value);
+const value=Number(
+document.getElementById("topupAmount").value
+);
 
-if(!amount||amount<=0){
-showToast("أدخل مبلغًا صحيحًا");
+if(!value || value<=0){
+
+showToast("اكتب مبلغًا صحيحًا");
+
 return;
+
 }
 
-balance+=amount;
+if(value>10000){
 
-addTransaction("💳","شحن الرصيد",amount);
+showToast("المبلغ التجريبي الأقصى 10000 جنيه");
 
-updateBalance();
+return;
+
+}
+
+balance+=value;
+
+addTransaction(
+"💳",
+"شحن الرصيد",
+value
+);
+
+saveData();
+
+updateUI();
+
 closeModal();
 
-showToast("تمت إضافة الرصيد تجريبيًا ✅");
+showToast(
+"تم شحن الرصيد تجريبيًا ✅"
+);
 
 }
 
-function processPayment(type){
 
-const element=document.getElementById("amount");
+/* =========================
+   PAYMENT
+========================= */
 
-if(!element){
-showToast("حدث خطأ، حاول مرة أخرى");
+function preparePayment(title,icon){
+
+const amountElement=
+document.getElementById("amount");
+
+if(!amountElement){
+
+showToast("تأكد من إدخال البيانات");
+
 return;
+
 }
 
-const amount=Number(element.value);
+const amount=Number(amountElement.value);
 
-if(!amount||amount<=0){
-showToast("أدخل المبلغ");
+if(!amount || amount<=0){
+
+showToast("أدخل مبلغًا صحيحًا");
+
 return;
+
 }
 
 if(amount>balance){
-showToast("الرصيد غير كافٍ");
+
+showToast(
+"الرصيد غير كافٍ. اشحن محفظتك أولاً."
+);
+
 return;
+
+}
+
+openModal(
+"تأكيد العملية",
+`
+
+<div class="confirm-icon">
+${icon}
+</div>
+
+<div class="confirm-text">
+
+<div>
+هل تريد تنفيذ العملية التالية؟
+</div>
+
+<strong>
+${title}
+</strong>
+
+<div class="confirm-amount">
+${money(amount)}
+</div>
+
+<div style="
+font-size:10px;
+color:#8993a3;
+">
+سيتم خصم المبلغ من الرصيد التجريبي.
+</div>
+
+</div>
+
+<button class="primary"
+onclick="completePayment('${escapeText(title)}','${icon}',${amount})">
+تأكيد العملية
+</button>
+
+<button class="secondary"
+onclick="closeModal()">
+رجوع
+</button>
+`
+);
+
+}
+
+function completePayment(title,icon,amount){
+
+if(amount>balance){
+
+closeModal();
+
+showToast("الرصيد غير كافٍ");
+
+return;
+
 }
 
 balance-=amount;
 
-addTransaction("💸",type,-amount);
+addTransaction(
+icon,
+title,
+-amount
+);
 
-updateBalance();
+saveData();
+
+updateUI();
+
 closeModal();
 
-showToast("تم تسجيل العملية تجريبيًا ✅");
+showToast(
+"تم تسجيل العملية بنجاح ✅"
+);
 
 }
+
+
+/* =========================
+   TRANSACTIONS
+========================= */
 
 function addTransaction(icon,title,amount){
 
 transactions.unshift({
+
 icon:icon,
+
 title:title,
+
 amount:amount,
-date:new Date().toLocaleString("ar-EG")
+
+date:new Date().toLocaleString(
+"ar-EG"
+)
+
 });
+
+if(transactions.length>50){
+
+transactions=transactions.slice(0,50);
+
+}
+
+saveData();
 
 renderTransactions();
 
@@ -948,27 +1401,36 @@ renderTransactions();
 
 function renderTransactions(){
 
-const list=document.getElementById("transactionsList");
+const list=
+document.getElementById(
+"transactionsList"
+);
 
-if(transactions.length===0){
+if(!transactions.length){
 
 list.innerHTML=`
 <div class="empty">
-لا توجد عمليات حتى الآن
+لا توجد عمليات حتى الآن 📋
 </div>
 `;
 
 return;
+
 }
 
-list.innerHTML=transactions.slice(0,5).map(t=>{
+list.innerHTML=
+transactions
+.slice(0,5)
+.map(transactionHTML)
+.join("");
 
-const amountText=
-t.amount>=0
-? "+"+t.amount.toFixed(2)+" ج.م"
-:t.amount.toFixed(2)+" ج.م";
+}
 
-return`
+function transactionHTML(t){
+
+const positive=t.amount>=0;
+
+return `
 
 <div class="transaction">
 
@@ -977,213 +1439,398 @@ ${t.icon}
 </div>
 
 <div class="transaction-info">
-<strong>${t.title}</strong>
-<small>${t.date}</small>
+
+<div class="transaction-title">
+${escapeHTML(t.title)}
 </div>
 
-<div class="amount">
-${amountText}
+<div class="transaction-date">
+${escapeHTML(t.date)}
+</div>
+
+</div>
+
+<div class="
+transaction-amount
+${positive?"positive":"negative"}
+">
+
+${positive?"+":""}${money(t.amount)}
+
 </div>
 
 </div>
 
 `;
-
-}).join("");
-
-}
-
-function updateBalance(){
-
-document.getElementById("balance").textContent=
-balance.toFixed(2)+" ج.م";
 
 }
 
 function showTransactions(){
 
-document.getElementById("modalTitle").textContent="📋 العمليات";
+let content="";
 
-if(transactions.length===0){
+if(!transactions.length){
 
-document.getElementById("modalContent").innerHTML=`
+content=`
 <div class="empty">
-لا توجد عمليات حتى الآن
+لا توجد عمليات حتى الآن 📋
 </div>
 `;
 
 }else{
 
-document.getElementById("modalContent").innerHTML=
-transactions.map(t=>`
-
-<div class="transaction">
-
-<div class="transaction-icon">
-${t.icon}
-</div>
-
-<div class="transaction-info">
-<strong>${t.title}</strong>
-<small>${t.date}</small>
-</div>
-
-<div class="amount">
-${t.amount>=0?"+":""}${t.amount.toFixed(2)} ج.م
-</div>
-
-</div>
-
-`).join("");
+content=
+transactions
+.map(transactionHTML)
+.join("");
 
 }
 
-document.getElementById("modal").classList.add("show");
+openModal(
+"📋 سجل العمليات",
+content
+);
 
 }
+
+
+/* =========================
+   WALLET
+========================= */
 
 function openWallet(){
 
-document.getElementById("modalTitle").textContent="💰 المحفظة";
-
-document.getElementById("modalContent").innerHTML=`
+openModal(
+"💰 المحفظة",
+`
 
 <div style="
-background:linear-gradient(135deg,#0866e8,#063c9f);
+background:linear-gradient(135deg,#086cf3,#063b99);
 color:white;
-border-radius:20px;
-padding:20px;
-margin-bottom:15px
+border-radius:21px;
+padding:21px;
+margin-bottom:15px;
 ">
 
-<div class="balance-title">رصيدك الحالي</div>
+<div style="font-size:11px;opacity:.8">
+الرصيد الحالي
+</div>
 
-<div class="balance">
-${balance.toFixed(2)} ج.م
+<div style="
+font-size:31px;
+font-weight:900;
+margin-top:5px;
+">
+${money(balance)}
 </div>
 
 </div>
 
-<button class="primary" onclick="openTopup()">
+<button class="primary"
+onclick="openTopup()">
 ＋ شحن الرصيد
 </button>
 
-<button class="secondary" onclick="showTransactions()">
+<button class="secondary"
+onclick="showTransactions()">
 📋 سجل العمليات
 </button>
-`;
 
-document.getElementById("modal").classList.add("show");
+`
+);
 
 }
 
+
+/* =========================
+   PAYMENTS
+========================= */
+
 function openPayments(){
 
-document.getElementById("modalTitle").textContent="💳 المدفوعات";
-
-document.getElementById("modalContent").innerHTML=`
+openModal(
+"💳 خدمات الدفع",
+`
 
 <div class="quick-grid">
 
 <div class="quick-card"
 onclick="closeModal();openService('mobile')">
-<div class="quick-card-icon">📱</div>
+
+<div class="quick-icon">📱</div>
+
 <div>
 <strong>شحن رصيد</strong>
 <small>موبايل</small>
 </div>
+
 </div>
+
 
 <div class="quick-card"
 onclick="closeModal();openService('internet')">
-<div class="quick-card-icon">🌐</div>
+
+<div class="quick-icon">🌐</div>
+
 <div>
 <strong>إنترنت</strong>
 <small>باقات</small>
 </div>
+
 </div>
+
 
 <div class="quick-card"
 onclick="closeModal();openService('electricity')">
-<div class="quick-card-icon">⚡</div>
+
+<div class="quick-icon">⚡</div>
+
 <div>
 <strong>كهرباء</strong>
-<small>دفع فاتورة</small>
+<small>فاتورة</small>
 </div>
+
 </div>
+
 
 <div class="quick-card"
 onclick="closeModal();openService('water')">
-<div class="quick-card-icon">💧</div>
+
+<div class="quick-icon">💧</div>
+
 <div>
 <strong>مياه</strong>
-<small>دفع فاتورة</small>
-</div>
+<small>فاتورة</small>
 </div>
 
 </div>
-`;
 
-document.getElementById("modal").classList.add("show");
+
+<div class="quick-card"
+onclick="closeModal();openService('gas')">
+
+<div class="quick-icon">🔥</div>
+
+<div>
+<strong>غاز</strong>
+<small>فاتورة</small>
+</div>
+
+</div>
+
+
+<div class="quick-card"
+onclick="closeModal();openService('transport')">
+
+<div class="quick-icon">🚌</div>
+
+<div>
+<strong>مواصلات</strong>
+<small>خدمة</small>
+</div>
+
+</div>
+
+</div>
+`
+);
 
 }
 
+
+/* =========================
+   PROFILE
+========================= */
+
 function openProfile(){
 
-document.getElementById("modalTitle").textContent="👤 حسابي";
+if(!user){
 
-document.getElementById("modalContent").innerHTML=`
+openLogin();
 
-<div style="text-align:center;padding:10px 0 20px">
+return;
 
-<div style="
-width:75px;
-height:75px;
-border-radius:50%;
-background:#edf4ff;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:35px;
-margin:auto auto 12px;
-">
+}
+
+openModal(
+"👤 حسابي",
+`
+
+<div class="profile-top">
+
+<div class="avatar">
 👤
 </div>
 
-<h3>مستخدم وصلة</h3>
+<div class="profile-name">
+${escapeHTML(user.name)}
+</div>
 
-<p style="color:#8a93a2;font-size:12px;margin-top:5px">
-الحساب الشخصي
-</p>
+<div class="profile-email">
+${escapeHTML(user.email)}
+</div>
 
 </div>
 
 <button class="secondary"
-onclick="showToast('الإعدادات قريبًا')">
+onclick="showToast('الإعدادات ستتوفر قريبًا ⚙️')">
 ⚙️ الإعدادات
 </button>
 
 <button class="secondary"
-onclick="showToast('المساعدة قريبًا')">
-❓ المساعدة والدعم
+onclick="showToast('الدعم الفني سيضاف قريبًا 💬')">
+💬 الدعم والمساعدة
 </button>
 
-`;
+<button class="secondary"
+onclick="logout()">
+🚪 تسجيل الخروج
+</button>
 
-document.getElementById("modal").classList.add("show");
+`
+);
 
 }
 
-function showAllServices(){
-showToast("جميع الخدمات متاحة من الصفحة الرئيسية");
+
+/* =========================
+   LOGIN
+========================= */
+
+function openLogin(){
+
+openModal(
+"👤 حساب وصلة",
+`
+
+<div class="login-box">
+
+<div class="login-logo">
+🔗
+</div>
+
+<p>
+سجل حسابك لحفظ بياناتك على هذا الجهاز.
+</p>
+
+<div class="form-group" style="text-align:right">
+<label>الاسم</label>
+<input id="loginName"
+type="text"
+placeholder="اكتب اسمك">
+</div>
+
+<div class="form-group" style="text-align:right">
+<label>البريد الإلكتروني</label>
+<input id="loginEmail"
+type="email"
+placeholder="example@email.com">
+</div>
+
+<button class="primary"
+onclick="createDemoAccount()">
+إنشاء الحساب
+</button>
+
+</div>
+
+<div style="
+text-align:center;
+font-size:10px;
+color:#8993a3;
+margin-top:12px;
+">
+الحساب الحالي تجريبي ومحلي على هذا الجهاز.
+</div>
+`
+);
+
 }
 
-function goHome(button){
+function createDemoAccount(){
 
-document.querySelectorAll(".nav-item")
-.forEach(item=>item.classList.remove("active"));
+const name=
+document.getElementById("loginName").value.trim();
 
-if(button)button.classList.add("active");
+const email=
+document.getElementById("loginEmail").value.trim();
+
+if(!name){
+
+showToast("اكتب اسمك");
+
+return;
+
+}
+
+if(!email || !email.includes("@")){
+
+showToast("اكتب بريدًا صحيحًا");
+
+return;
+
+}
+
+user={
+name:name,
+email:email
+};
+
+saveData();
+
+updateUI();
+
+closeModal();
+
+showToast(
+"تم إنشاء حسابك على الجهاز ✅"
+);
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+function logout(){
+
+user=null;
+
+saveData();
+
+closeModal();
+
+updateUI();
+
+showToast(
+"تم تسجيل الخروج"
+);
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+function setActive(button){
+
+document
+.querySelectorAll(".nav-item")
+.forEach(item=>{
+item.classList.remove("active");
+});
+
+if(button){
+button.classList.add("active");
+}
+
+}
+
+function homeNav(button){
+
+setActive(button);
 
 window.scrollTo({
 top:0,
@@ -1192,33 +1839,138 @@ behavior:"smooth"
 
 }
 
-function closeModal(){
-document.getElementById("modal").classList.remove("show");
+function paymentsNav(button){
+
+setActive(button);
+
+openPayments();
+
 }
 
-document.getElementById("modal").addEventListener("click",function(e){
+function transactionsNav(button){
 
-if(e.target===this){
-closeModal();
+setActive(button);
+
+showTransactions();
+
 }
 
+function walletNav(button){
+
+setActive(button);
+
+openWallet();
+
+}
+
+function profileNav(button){
+
+setActive(button);
+
+openProfile();
+
+}
+
+
+/* =========================
+   UI
+========================= */
+
+function updateUI(){
+
+document.getElementById(
+"balance"
+).textContent=money(balance);
+
+const greeting=
+document.getElementById("greeting");
+
+if(user){
+
+greeting.textContent=
+"أهلاً يا "+user.name+" 👋";
+
+}else{
+
+greeting.textContent=
+"أهلاً بك 👋";
+
+}
+
+renderTransactions();
+
+}
+
+function money(value){
+
+return Number(value)
+.toFixed(2)+" ج.م";
+
+}
+
+
+/* =========================
+   HELPERS
+========================= */
+
+function showAllServices(){
+
+window.scrollTo({
+top:document.querySelector(".services").offsetTop-80,
+behavior:"smooth"
 });
+
+showToast(
+"كل خدمات وصلة موجودة هنا 👇"
+);
+
+}
 
 function showToast(message){
 
-const toast=document.getElementById("toast");
+const toast=
+document.getElementById("toast");
 
 toast.textContent=message;
+
 toast.classList.add("show");
 
+clearTimeout(
+window.waslaToastTimer
+);
+
+window.waslaToastTimer=
 setTimeout(()=>{
 toast.classList.remove("show");
 },2500);
 
 }
 
-renderTransactions();
-updateBalance();
+function escapeHTML(value){
+
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+function escapeText(value){
+
+return String(value)
+.replace(/\\/g,"\\\\")
+.replace(/'/g,"\\'");
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+updateUI();
 
 </script>
 
