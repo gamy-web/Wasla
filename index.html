@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0757d5">
+<title>وصلة | خدماتك في مكان واحد</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Tahoma,sans-serif;
+}
+
+body{
+  background:#f4f7fb;
+  color:#172033;
+  min-height:100vh;
+}
+
+button,input,select{font:inherit}
+button{border:0;cursor:pointer}
+
+.app{
+  max-width:520px;
+  margin:auto;
+  min-height:100vh;
+  background:#f4f7fb;
+  padding-bottom:90px;
+}
+
+/* الهيدر */
+.header{
+  background:linear-gradient(135deg,#0866e8,#063c9f);
+  color:white;
+  padding:22px 18px 28px;
+  border-radius:0 0 28px 28px;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:22px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:24px;
+  font-weight:800;
+}
+
+.logo-icon{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  background:rgba(255,255,255,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+}
+
+.profile-btn{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+  color:white;
+  font-size:20px;
+}
+
+.welcome{
+  font-size:14px;
+  opacity:.85;
+  margin-bottom:6px;
+}
+
+.header h1{
+  font-size:25px;
+  margin-bottom:18px;
+}
+
+.balance-card{
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:20px;
+  padding:18px;
+  backdrop-filter:blur(10px);
+}
+
+.balance-title{
+  font-size:13px;
+  opacity:.85;
+}
+
+.balance{
+  font-size:32px;
+  font-weight:800;
+  margin:7px 0 15px;
+}
+
+.balance-actions{
+  display:flex;
+  gap:10px;
+}
+
+.balance-actions button{
+  flex:1;
+  padding:11px;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+.add-money{
+  background:white;
+  color:#0757d5;
+}
+
+.transactions-btn{
+  background:rgba(255,255,255,.14);
+  color:white;
+  border:1px solid rgba(255,255,255,.25);
+}
+
+/* المحتوى */
+.main{
+  padding:20px 15px;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:14px;
+}
+
+.section-title h2{font-size:19px}
+
+.section-title span{
+  color:#0757d5;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:11px;
+}
+
+.service{
+  background:white;
+  border-radius:17px;
+  padding:14px 5px;
+  text-align:center;
+  box-shadow:0 4px 18px rgba(30,60,100,.06);
+  transition:.2s;
+}
+
+.service:active{transform:scale(.95)}
+
+.service-icon{
+  width:48px;
+  height:48px;
+  margin:auto auto 8px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+  background:#edf4ff;
+}
+
+.service-name{
+  font-size:12px;
+  font-weight:bold;
+  line-height:1.4;
+}
+
+.quick{margin-top:25px}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.quick-card{
+  background:white;
+  padding:17px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  box-shadow:0 4px 18px rgba(30,60,100,.06);
+  cursor:pointer;
+}
+
+.quick-card-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#eef5ff;
+  font-size:22px;
+}
+
+.quick-card strong{
+  display:block;
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.quick-card small{
+  color:#7a8495;
+  font-size:11px;
+}
+
+.offer{
+  margin-top:25px;
+  background:linear-gradient(135deg,#0a65e8,#1746a4);
+  color:white;
+  border-radius:21px;
+  padding:20px;
+  position:relative;
+  overflow:hidden;
+}
+
+.offer h3{
+  font-size:19px;
+  margin-bottom:7px;
+}
+
+.offer p{
+  font-size:12px;
+  opacity:.9;
+  margin-bottom:14px;
+}
+
+.offer button{
+  background:white;
+  color:#0757d5;
+  padding:10px 17px;
+  border-radius:11px;
+  font-weight:bold;
+}
+
+.transactions{margin-top:25px}
+
+.transaction{
+  background:white;
+  padding:14px;
+  border-radius:17px;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.transaction-icon{
+  width:44px;
+  height:44px;
+  background:#eef5ff;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+.transaction-info{flex:1}
+
+.transaction-info strong{
+  display:block;
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.transaction-info small{
+  color:#8a93a2;
+  font-size:11px;
+}
+
+.amount{
+  font-weight:bold;
+  color:#e23b3b;
+  font-size:13px;
+}
+
+.empty{
+  background:white;
+  border-radius:17px;
+  padding:25px;
+  text-align:center;
+  color:#8b94a4;
+  font-size:13px;
+}
+
+/* القائمة السفلية */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:520px;
+  background:rgba(255,255,255,.96);
+  border-top:1px solid #e6eaf0;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  padding:9px 5px;
+  z-index:20;
+  backdrop-filter:blur(12px);
+}
+
+.nav-item{
+  background:none;
+  color:#8a93a2;
+  font-size:10px;
+  text-align:center;
+}
+
+.nav-icon{
+  display:block;
+  font-size:20px;
+  margin-bottom:3px;
+}
+
+.nav-item.active{
+  color:#0757d5;
+  font-weight:bold;
+}
+
+/* النافذة */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(8,20,40,.55);
+  z-index:50;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.modal.show{display:flex}
+
+.modal-box{
+  width:100%;
+  max-width:520px;
+  background:white;
+  border-radius:27px 27px 0 0;
+  padding:22px 18px 30px;
+  animation:slideUp .25s ease;
+  max-height:90vh;
+  overflow:auto;
+}
+
+@keyframes slideUp{
+  from{transform:translateY(100%)}
+  to{transform:translateY(0)}
+}
+
+.modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.modal-head h3{font-size:20px}
+
+.close{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:#f0f3f7;
+  color:#555;
+}
+
+.form-group{margin-bottom:14px}
+
+.form-group label{
+  display:block;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select{
+  width:100%;
+  padding:14px;
+  border:1px solid #dfe4eb;
+  border-radius:13px;
+  outline:none;
+  background:#fafbfd;
+}
+
+.primary{
+  width:100%;
+  padding:14px;
+  border-radius:13px;
+  background:#0757d5;
+  color:white;
+  font-weight:bold;
+  margin-top:5px;
+}
+
+.secondary{
+  width:100%;
+  padding:13px;
+  border-radius:13px;
+  background:#eef2f7;
+  color:#263449;
+  font-weight:bold;
+  margin-top:9px;
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:92px;
+  transform:translateX(-50%) translateY(20px);
+  background:#172033;
+  color:white;
+  padding:12px 18px;
+  border-radius:13px;
+  font-size:13px;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:100;
+  width:max-content;
+  max-width:90%;
+  text-align:center;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+@media(max-width:370px){
+  .services{grid-template-columns:repeat(3,1fr)}
+  .balance{font-size:28px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="header">
+
+  <div class="topbar">
+    <div class="logo">
+      <div class="logo-icon">🔗</div>
+      <span>وصلة</span>
+    </div>
+
+    <button class="profile-btn" onclick="openProfile()">👤</button>
+  </div>
+
+  <div class="welcome">أهلاً بك 👋</div>
+  <h1>كل خدماتك في مكان واحد</h1>
+
+  <div class="balance-card">
+    <div class="balance-title">الرصيد المتاح</div>
+
+    <div class="balance" id="balance">0.00 ج.م</div>
+
+    <div class="balance-actions">
+      <button class="add-money" onclick="openTopup()">
+        ＋ شحن الرصيد
+      </button>
+
+      <button class="transactions-btn" onclick="showTransactions()">
+        📋 العمليات
+      </button>
+    </div>
+  </div>
+
+</header>
+
+<main class="main">
+
+  <div class="section-title">
+    <h2>الخدمات</h2>
+    <span onclick="showAllServices()">عرض الكل</span>
+  </div>
+
+  <div class="services">
+
+    <div class="service" onclick="openService('mobile')">
+      <div class="service-icon">📱</div>
+      <div class="service-name">شحن رصيد</div>
+    </div>
+
+    <div class="service" onclick="openService('internet')">
+      <div class="service-icon">🌐</div>
+      <div class="service-name">باقات إنترنت</div>
+    </div>
+
+    <div class="service" onclick="openService('electricity')">
+      <div class="service-icon">⚡</div>
+      <div class="service-name">كهرباء</div>
+    </div>
+
+    <div class="service" onclick="openService('water')">
+      <div class="service-icon">💧</div>
+      <div class="service-name">مياه</div>
+    </div>
+
+    <div class="service" onclick="openService('gas')">
+      <div class="service-icon">🔥</div>
+      <div class="service-name">غاز</div>
+    </div>
+
+    <div class="service" onclick="openService('transport')">
+      <div class="service-icon">🚌</div>
+      <div class="service-name">مواصلات</div>
+    </div>
+
+    <div class="service" onclick="openService('entertainment')">
+      <div class="service-icon">🎬</div>
+      <div class="service-name">ترفيه</div>
+    </div>
+
+    <div class="service" onclick="openService('phone')">
+      <div class="service-icon">☎️</div>
+      <div class="service-name">تليفون</div>
+    </div>
+
+  </div>
+
+  <section class="quick">
+
+    <div class="section-title">
+      <h2>وصول سريع</h2>
+    </div>
+
+    <div class="quick-grid">
+
+      <div class="quick-card" onclick="openTopup()">
+        <div class="quick-card-icon">💳</div>
+        <div>
+          <strong>شحن المحفظة</strong>
+          <small>أضف رصيدك بسهولة</small>
+        </div>
+      </div>
+
+      <div class="quick-card" onclick="showTransactions()">
+        <div class="quick-card-icon">🧾</div>
+        <div>
+          <strong>الفواتير</strong>
+          <small>تابع عملياتك</small>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="offer">
+    <h3>🎁 عروض وصلة</h3>
+    <p>العروض والمكافآت ستظهر هنا عند تفعيلها.</p>
+    <button onclick="showToast('سيتم إضافة العروض قريبًا')">
+      اكتشف العروض
+    </button>
+  </section>
+
+  <section class="transactions">
+
+    <div class="section-title">
+      <h2>آخر العمليات</h2>
+      <span onclick="showTransactions()">عرض الكل</span>
+    </div>
+
+    <div id="transactionsList">
+      <div class="empty">
+        لا توجد عمليات حتى الآن
+      </div>
+    </div>
+
+  </section>
+
+</main>
+</div>
+
+<nav class="bottom-nav">
+
+  <button class="nav-item active" onclick="goHome(this)">
+    <span class="nav-icon">🏠</span>
+    الرئيسية
+  </button>
+
+  <button class="nav-item" onclick="openPayments(this)">
+    <span class="nav-icon">💳</span>
+    الدفع
+  </button>
+
+  <button class="nav-item" onclick="showTransactions(this)">
+    <span class="nav-icon">📋</span>
+    العمليات
+  </button>
+
+  <button class="nav-item" onclick="openWallet(this)">
+    <span class="nav-icon">💰</span>
+    المحفظة
+  </button>
+
+  <button class="nav-item" onclick="openProfile(this)">
+    <span class="nav-icon">👤</span>
+    حسابي
+  </button>
+
+</nav>
+
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <div class="modal-head">
+      <h3 id="modalTitle">الخدمة</h3>
+      <button class="close" onclick="closeModal()">✕</button>
+    </div>
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+let balance = 0;
+let transactions = [];
+
+const serviceData = {
+
+mobile:{
+title:"📱 شحن رصيد",
+fields:`
+<div class="form-group">
+<label>رقم الهاتف</label>
+<input id="phoneNumber" type="tel" placeholder="01xxxxxxxxx">
+</div>
+
+<div class="form-group">
+<label>شركة المحمول</label>
+<select id="network">
+<option>فودافون</option>
+<option>أورنج</option>
+<option>اتصالات</option>
+<option>WE</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>المبلغ</label>
+<input id="amount" type="number" placeholder="مثال: 50">
+</div>
+
+<button class="primary" onclick="processPayment('شحن رصيد')">
+متابعة
+</button>
+`
+},
+
+internet:{
+title:"🌐 باقات الإنترنت",
+fields:`
+<div class="form-group">
+<label>رقم الهاتف</label>
+<input id="phoneNumber" type="tel" placeholder="01xxxxxxxxx">
+</div>
+
+<div class="form-group">
+<label>شركة المحمول</label>
+<select>
+<option>فودافون</option>
+<option>أورنج</option>
+<option>اتصالات</option>
+<option>WE</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>الباقة</label>
+<select id="amount">
+<option value="30">باقة 30 جنيه</option>
+<option value="50">باقة 50 جنيه</option>
+<option value="100">باقة 100 جنيه</option>
+<option value="200">باقة 200 جنيه</option>
+</select>
+</div>
+
+<button class="primary" onclick="processPayment('باقة إنترنت')">
+متابعة
+</button>
+`
+},
+
+electricity:{
+title:"⚡ دفع الكهرباء",
+fields:`
+<div class="form-group">
+<label>رقم العداد / كود الدفع</label>
+<input id="customerCode" type="number" placeholder="أدخل الكود">
+</div>
+
+<div class="form-group">
+<label>المبلغ</label>
+<input id="amount" type="number" placeholder="المبلغ">
+</div>
+
+<button class="primary" onclick="processPayment('كهرباء')">
+متابعة
+</button>
+`
+},
+
+water:{
+title:"💧 دفع المياه",
+fields:`
+<div class="form-group">
+<label>رقم المشترك</label>
+<input id="customerCode" type="number" placeholder="رقم المشترك">
+</div>
+
+<div class="form-group">
+<label>المبلغ</label>
+<input id="amount" type="number" placeholder="المبلغ">
+</div>
+
+<button class="primary" onclick="processPayment('مياه')">
+متابعة
+</button>
+`
+},
+
+gas:{
+title:"🔥 دفع الغاز",
+fields:`
+<div class="form-group">
+<label>رقم المشترك</label>
+<input id="customerCode" type="text" placeholder="رقم المشترك">
+</div>
+
+<div class="form-group">
+<label>المبلغ</label>
+<input id="amount" type="number" placeholder="المبلغ">
+</div>
+
+<button class="primary" onclick="processPayment('غاز')">
+متابعة
+</button>
+`
+},
+
+transport:{
+title:"🚌 المواصلات",
+fields:`
+<div class="form-group">
+<label>اختر الخدمة</label>
+<select>
+<option>تذاكر مواصلات</option>
+<option>شحن كارت مواصلات</option>
+<option>خدمات النقل</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>المبلغ</label>
+<input id="amount" type="number" placeholder="المبلغ">
+</div>
+
+<button class="primary" onclick="processPayment('مواصلات')">
+متابعة
+</button>
+`
+},
+
+entertainment:{
+title:"🎬 المحتوى الترفيهي",
+fields:`
+<div class="form-group">
+<label>اختر الخدمة</label>
+<select>
+<option>اشتراك ترفيهي</option>
+<option>محتوى رقمي</option>
+<option>ألعاب</option>
+<option>خدمات أخرى</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>المبلغ</label>
+<input id="amount" type="number" placeholder="المبلغ">
+</div>
+
+<button class="primary" onclick="processPayment('ترفيه')">
+متابعة
+</button>
+`
+},
+
+phone:{
+title:"☎️ التليفون والإنترنت",
+fields:`
+<div class="form-group">
+<label>رقم الخدمة</label>
+<input id="customerCode" type="text" placeholder="رقم الخدمة">
+</div>
+
+<div class="form-group">
+<label>المبلغ</label>
+<input id="amount" type="number" placeholder="المبلغ">
+</div>
+
+<button class="primary" onclick="processPayment('تليفون وإنترنت')">
+متابعة
+</button>
+`
+}
+
+};
+
+function openService(type){
+
+const data=serviceData[type];
+
+if(!data)return;
+
+document.getElementById("modalTitle").textContent=data.title;
+document.getElementById("modalContent").innerHTML=data.fields;
+document.getElementById("modal").classList.add("show");
+
+}
+
+function openTopup(){
+
+document.getElementById("modalTitle").textContent="💳 شحن الرصيد";
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="form-group">
+<label>مبلغ الشحن</label>
+<input id="topupAmount" type="number" placeholder="مثال: 100">
+</div>
+
+<div class="form-group">
+<label>طريقة الشحن</label>
+<select>
+<option>بطاقة بنكية</option>
+<option>محفظة إلكترونية</option>
+<option>بطاقة دفع</option>
+</select>
+</div>
+
+<button class="primary" onclick="topupBalance()">
+شحن الرصيد
+</button>
+
+<button class="secondary" onclick="closeModal()">
+إلغاء
+</button>
+`;
+
+document.getElementById("modal").classList.add("show");
+
+}
+
+function topupBalance(){
+
+const amount=Number(document.getElementById("topupAmount").value);
+
+if(!amount||amount<=0){
+showToast("أدخل مبلغًا صحيحًا");
+return;
+}
+
+balance+=amount;
+
+addTransaction("💳","شحن الرصيد",amount);
+
+updateBalance();
+closeModal();
+
+showToast("تمت إضافة الرصيد تجريبيًا ✅");
+
+}
+
+function processPayment(type){
+
+const element=document.getElementById("amount");
+
+if(!element){
+showToast("حدث خطأ، حاول مرة أخرى");
+return;
+}
+
+const amount=Number(element.value);
+
+if(!amount||amount<=0){
+showToast("أدخل المبلغ");
+return;
+}
+
+if(amount>balance){
+showToast("الرصيد غير كافٍ");
+return;
+}
+
+balance-=amount;
+
+addTransaction("💸",type,-amount);
+
+updateBalance();
+closeModal();
+
+showToast("تم تسجيل العملية تجريبيًا ✅");
+
+}
+
+function addTransaction(icon,title,amount){
+
+transactions.unshift({
+icon:icon,
+title:title,
+amount:amount,
+date:new Date().toLocaleString("ar-EG")
+});
+
+renderTransactions();
+
+}
+
+function renderTransactions(){
+
+const list=document.getElementById("transactionsList");
+
+if(transactions.length===0){
+
+list.innerHTML=`
+<div class="empty">
+لا توجد عمليات حتى الآن
+</div>
+`;
+
+return;
+}
+
+list.innerHTML=transactions.slice(0,5).map(t=>{
+
+const amountText=
+t.amount>=0
+? "+"+t.amount.toFixed(2)+" ج.م"
+:t.amount.toFixed(2)+" ج.م";
+
+return`
+
+<div class="transaction">
+
+<div class="transaction-icon">
+${t.icon}
+</div>
+
+<div class="transaction-info">
+<strong>${t.title}</strong>
+<small>${t.date}</small>
+</div>
+
+<div class="amount">
+${amountText}
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+function updateBalance(){
+
+document.getElementById("balance").textContent=
+balance.toFixed(2)+" ج.م";
+
+}
+
+function showTransactions(){
+
+document.getElementById("modalTitle").textContent="📋 العمليات";
+
+if(transactions.length===0){
+
+document.getElementById("modalContent").innerHTML=`
+<div class="empty">
+لا توجد عمليات حتى الآن
+</div>
+`;
+
+}else{
+
+document.getElementById("modalContent").innerHTML=
+transactions.map(t=>`
+
+<div class="transaction">
+
+<div class="transaction-icon">
+${t.icon}
+</div>
+
+<div class="transaction-info">
+<strong>${t.title}</strong>
+<small>${t.date}</small>
+</div>
+
+<div class="amount">
+${t.amount>=0?"+":""}${t.amount.toFixed(2)} ج.م
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+document.getElementById("modal").classList.add("show");
+
+}
+
+function openWallet(){
+
+document.getElementById("modalTitle").textContent="💰 المحفظة";
+
+document.getElementById("modalContent").innerHTML=`
+
+<div style="
+background:linear-gradient(135deg,#0866e8,#063c9f);
+color:white;
+border-radius:20px;
+padding:20px;
+margin-bottom:15px
+">
+
+<div class="balance-title">رصيدك الحالي</div>
+
+<div class="balance">
+${balance.toFixed(2)} ج.م
+</div>
+
+</div>
+
+<button class="primary" onclick="openTopup()">
+＋ شحن الرصيد
+</button>
+
+<button class="secondary" onclick="showTransactions()">
+📋 سجل العمليات
+</button>
+`;
+
+document.getElementById("modal").classList.add("show");
+
+}
+
+function openPayments(){
+
+document.getElementById("modalTitle").textContent="💳 المدفوعات";
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="quick-grid">
+
+<div class="quick-card"
+onclick="closeModal();openService('mobile')">
+<div class="quick-card-icon">📱</div>
+<div>
+<strong>شحن رصيد</strong>
+<small>موبايل</small>
+</div>
+</div>
+
+<div class="quick-card"
+onclick="closeModal();openService('internet')">
+<div class="quick-card-icon">🌐</div>
+<div>
+<strong>إنترنت</strong>
+<small>باقات</small>
+</div>
+</div>
+
+<div class="quick-card"
+onclick="closeModal();openService('electricity')">
+<div class="quick-card-icon">⚡</div>
+<div>
+<strong>كهرباء</strong>
+<small>دفع فاتورة</small>
+</div>
+</div>
+
+<div class="quick-card"
+onclick="closeModal();openService('water')">
+<div class="quick-card-icon">💧</div>
+<div>
+<strong>مياه</strong>
+<small>دفع فاتورة</small>
+</div>
+</div>
+
+</div>
+`;
+
+document.getElementById("modal").classList.add("show");
+
+}
+
+function openProfile(){
+
+document.getElementById("modalTitle").textContent="👤 حسابي";
+
+document.getElementById("modalContent").innerHTML=`
+
+<div style="text-align:center;padding:10px 0 20px">
+
+<div style="
+width:75px;
+height:75px;
+border-radius:50%;
+background:#edf4ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:35px;
+margin:auto auto 12px;
+">
+👤
+</div>
+
+<h3>مستخدم وصلة</h3>
+
+<p style="color:#8a93a2;font-size:12px;margin-top:5px">
+الحساب الشخصي
+</p>
+
+</div>
+
+<button class="secondary"
+onclick="showToast('الإعدادات قريبًا')">
+⚙️ الإعدادات
+</button>
+
+<button class="secondary"
+onclick="showToast('المساعدة قريبًا')">
+❓ المساعدة والدعم
+</button>
+
+`;
+
+document.getElementById("modal").classList.add("show");
+
+}
+
+function showAllServices(){
+showToast("جميع الخدمات متاحة من الصفحة الرئيسية");
+}
+
+function goHome(button){
+
+document.querySelectorAll(".nav-item")
+.forEach(item=>item.classList.remove("active"));
+
+if(button)button.classList.add("active");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+function closeModal(){
+document.getElementById("modal").classList.remove("show");
+}
+
+document.getElementById("modal").addEventListener("click",function(e){
+
+if(e.target===this){
+closeModal();
+}
+
+});
+
+function showToast(message){
+
+const toast=document.getElementById("toast");
+
+toast.textContent=message;
+toast.classList.add("show");
+
+setTimeout(()=>{
+toast.classList.remove("show");
+},2500);
+
+}
+
+renderTransactions();
+updateBalance();
+
+</script>
+
+</body>
+</html>
